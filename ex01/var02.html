@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 오브젝트 타입의 let
+        // user = class
+        let user = {
+            id: 1,
+            username: "ssar",
+            password: "1234"
+        };
+        console.log("id", user.id);
+        console.log("username", user.username);
+        console.log("password", user.password);
+        console.log(user); // json과 비슷하게 출력이 된다.
+
+        // x-www-form-urlencoded : id=1&username=ssar&password=1234
+        // json : { "id":1, "username":"ssar", "password":"1234"}
+
+        let board = {
+            id: 1,
+            title: "제목1",
+            content: "내용1",
+            user: user
+            // 또는
+            //     user : {
+            //     id: 1,
+            //     username: "ssar",
+            //     password: "1234"
+            // }
+        };
+
+        console.log(board);
+
+        // 아래의 자바스크립트 객체 <-> Json 변경이 자주 사용된다.
+
+        let data = JSON.stringify(board);
+        // 자바스크립트 객체를 Json으로 변경해준다.
+        console.log(data);
+
+        let data2 = JSON.parse(data);
+        // Json 언어의 객체를 자바스크립트로 변경해준다.
+        console.log(data2)
+
+
+    </script>
+</body>
+
+</html>

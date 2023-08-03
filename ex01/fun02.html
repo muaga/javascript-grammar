@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+<!-- 원하는 html의 코드에 id를 부여해서, 해당 코드를 자바스크립트를 통해 
+Css를 제어하는 방법-->
+
+<body>
+    <!-- document -->
+    <!-- documant는 body를 찾는다. -->
+    <h1>숨기기 이벤트</h1>
+    <hr />
+    <button onclick="hide1()">display로 숨기기</button>
+    <!-- onclick : 자바 함수를 실행시키는 키워드 -->
+    <button onclick="hide2()">visible로 숨기기</button>
+    <div class="box">
+        <div id="b1" class="box">내부박스1</div>
+        <div id="b2" class="box">내부박스2</div>
+        <!-- id : PK처럼 중복될 수 없이, 해당 코드를 지칭하는 이름으로써
+        자바 스크립트에서 찾아볼 수 있다.-->
+    </div>
+
+    <script>
+        function hide1() {
+            let e1 = document.querySelector("#b1");
+            // ★★ document(body)의 id가 b1인 것을 찾아라
+            // e1 : b1의 모든 속성을 받아서 .으로 호출할 수 있다. 
+            // 예) b1에 name, value가 있다면 -> e1.name, e1.value로 사용할 수 있다.
+            e1.style.display = "none";
+            // b1의 style(css)을 none으로 바꾼 것 -> 존재없음(공간까지)
+        }
+        function hide2() {
+            let e1 = document.querySelector("#b2");
+            e1.style.visibility = "hidden";
+            // visibility로 바꾼 것 -> 사라짐(공간은 남음)
+        }    
+    </script>
+</body>
+
+</html>

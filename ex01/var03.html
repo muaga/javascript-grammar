@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 배열의 let
+        let arr = [1, 2, 3, 4];
+        console.log(arr);
+        console.log(arr[0]);
+
+        // 기존 배열에 데이터를 추가하는 방법
+        // 전개 연산자(Spread operator)
+        let arr2 = [...arr, 9];
+        // 스프레드 연산자(...) : 내가 가지고 있는 타입을 벗겨내는 연산자.
+        // 진행방식
+        // 1. [1, 2, 3, 4] -> 1, 2, 3, 4
+        // 2. 1, 2, 3, 4, 9 
+        // 3. [1, 2, 3, 4, 9] 다시 감싸기
+        // * 만약 arr 앞에 데이터 100도 넣고 싶다면 [100, ...arr, 9] 
+        // * 기존의 데이터를 변경하고 싶다면, arr2[5] = 500; -> [100, 1, 2, 3, 4, 500]
+        console.log(arr2);
+
+    </script>
+</body>
+
+</html>
