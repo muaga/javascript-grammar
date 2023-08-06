@@ -1,0 +1,97 @@
+<!-- 요소 !-->
+<!-- 요소 = html의 tag !-->
+
+<!-- 
+document.querySelector();
+-> id = "#id"
+:유일한 객체
+
+document.querySeletorAll();
+-> class = ".class" ;
+-> tag = "tag"
+:class와 tag는 유일하지 않을 수가 있으므로, 모두 찾을 수 있게 All을 사용한다.-->
+
+
+<!-- innerHTML, textContent !-->
+<!-- 요소를 찾고, 내용을 변경하기 !-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>box1</div>
+    <div id="err">box2</div>
+    <div class="red-text">box3</div>
+    <!-- box3만 빨간색으로 하고 싶을 때 !-->
+    <div class="red-text">box4</div>
+    <!-- box4도 빨간색으로 하고 싶을 때 !-->
+    <!-- 이와 같이 class는 중복으로 줄 수 있다. !-->
+    <div id="box5">box5</div>
+    <hr />
+    <button onclick="tagChange()">태그찾기</button>
+    <button onclick="classChange()">클래스찾기</button>
+    <button onclick="idChange()">아이디찾기</button>
+    <button onclick="err()">에러</button>
+
+    <script>
+
+        function err() {
+            let errE1 = document.querySelector("#err");
+            console.log(errE1);
+            errE1.innerHTML = "아이디 혹은 비밀번호를 잘못 적음"
+        }
+
+        function tagChange() {
+            // tag를 찾으면 div가 5개이므로 5
+            let tagE1 = document.querySelectorAll("div");
+            // list를 return한다.(배열)
+
+            tagE1[0].innerHTML = "<h1>내용변경</h1>";
+            // ★★ 내용변경 1) innerHTML = 내용변경에 tag 효과도 넣을 수 있다 <- 이걸 더 쓴다.
+            tagE1[1].textContent = "내용변경";
+            // ★★ 내용변경 2) textContent = 내용변경만 가능하다.
+            tagE1[2].textContent = "내용변경";
+            tagE1[3].textContent = "내용변경";
+            tagE1[4].textContent = "내용변경";
+            // [태그찾기]를 눌리면 "box" -> "내용변경"으로 text가 변경된다.
+
+            console.log(tagE1[0]);
+            // for문을 돌아서 데이터를 list(배열)을 
+            // return하는 것이 querySelectorAll
+        }
+        function classChange() {
+            // class를 찾으면 class가 2개이므로 2
+            let classC1 = document.querySelectorAll(".red-text");
+
+            classC1[0].textContent = "클래스변경";
+            classC1[1].textContent = "클래스변경";
+
+            console.log(classC1[0]);
+
+        }
+        function idChange() {
+            // id를 찾으면 id가 1개이므로 1
+            let idI1 = document.querySelector("#box5");
+
+            idI1.textContent = "아이디변경";
+            // id는 유일한 값으로 list가 아닌 하나의 값을 return한다.
+            // 그래서 index가 없으므로 바로 .한다.
+
+            console.log(idI1);
+
+        }
+    </script>
+</body>
+
+</html>

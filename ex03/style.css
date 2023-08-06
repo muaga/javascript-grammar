@@ -1,0 +1,5 @@
+/* spring에서는 static폴더에 넣으면 된다. */
+/* .box = class(.) box */
+.box {
+    background-color: red;
+}

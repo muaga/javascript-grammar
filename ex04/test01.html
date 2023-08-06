@@ -1,0 +1,40 @@
+<!-- 이벤트 등록방법 2가지 !-->
+<!-- 버튼은 HTML 요소로 사용하고, 그 외의 이벤트는 Id, 이벤트리스너를 사용하는 것이 좋다.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1. HTML요소에 직접 이벤트 핸들러 등록하기 -->
+    <button onclick="alert('Hello World!')">Click me</button>
+    <!-- button은 on요소를 기본값으로 넣고, 각 이벤트이름을 넣어야 한다. -->
+    
+    <!-- 2. addEventListener()메소드 -->
+    <button id="myBtn">Click me</button>
+
+    <!-- value값도 확인해보기 -->
+    <input type="text" id="t1"></input>
+    <script>
+        let myBtn = document.querySelector("#myBtn");
+        myBtn.addEventListener("click", function() {
+            // click은 원하는 이벤트기능, function은 진행될 기능
+            alert("hello world");
+        })
+
+        let t1 = document.querySelector("#t1");
+        t1.addEventListener("keydown", function() {
+            // keydown : 키를 뗐을 때 value가 입력된다.
+            console.log(t1.value)
+            // keydown : 콘솔을 확인해보면, 키를 눌리고 뗄 때마다
+            // 값이 계속 입력이 되는 것을 확인할 수 있다.
+            // value : t1의 value값을 확인할 수 있다.        
+        })
+        
+
+    </script>
+</body>
+</html>
